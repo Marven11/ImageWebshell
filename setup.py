@@ -8,7 +8,7 @@ with open("requirements.txt", "r", encoding="utf-8") as f:
 
 setuptools.setup(
     name="image_webshell",
-    version="0.0.1",
+    version="0.0.2",
     author="Marven11",
     author_email="marven11@example.com",
     description="Embed webshell and other text into a png",
