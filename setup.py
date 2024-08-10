@@ -24,7 +24,7 @@ setuptools.setup(
     package_data={},
     entry_points={
         "console_scripts": [
-            "image_webshell=image_webshell.main:main",
+            "image_webshell=image_webshell.__main__:main",
         ]
     },
 )
