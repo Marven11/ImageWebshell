@@ -2,7 +2,6 @@ from pathlib import Path
 import zlib
 import numpy as np
 from PIL import Image
-from fire import Fire
 
 # credit:
 # https://web.archive.org/web/20200109233507/https://www.idontplaydarts.com/2012/06/encoding-web-shells-in-png-idat-chunks/
@@ -83,9 +82,3 @@ def generate(
         print("Usage: shell.php?0=create_function, password is 1")
 
 
-def main():
-    Fire(generate)
-
-
-if __name__ == "__main__":
-    main()
