@@ -45,7 +45,7 @@
 
       packages.default = with pythonPackages; buildPythonApplication {
         pname = "image-webshell";
-        version = "0.0.2";
+        version = "0.0.3";
         doCheck = false;
 
         build-system = [
