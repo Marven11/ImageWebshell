@@ -14,7 +14,7 @@ setuptools.setup(
     description="Embed webshell and other text into a png",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Marven11/Fenjing",
+    url="https://github.com/Marven11/ImageWebshell",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3.8",
@@ -24,7 +24,7 @@ setuptools.setup(
     package_data={},
     entry_points={
         "console_scripts": [
-            "image_webshell=image_webshell.__main__:main",
+            "image_webshell=image_webshell.main:main",
         ]
     },
 )
